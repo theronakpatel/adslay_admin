@@ -1,0 +1,53 @@
+{
+    "info": {
+        "name": "Video API",
+        "description": "API Collection for Video Management and Device Information",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "List Videos",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/videos",
+                    "host": ["{{base_url}}"],
+                    "path": ["api", "videos"]
+                },
+                "description": "Retrieve a list of all videos."
+            },
+            "response": []
+        },
+        {
+            "name": "Submit Device Info",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "{{base_url}}/api/device-info",
+                    "host": ["{{base_url}}"],
+                    "path": ["api", "device-info"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"model\": \"Model Name\",\n    \"device\": \"Device Name\",\n    \"buildId\": \"Build ID\",\n    \"board\": \"Board Name\",\n    \"brand\": \"Brand Name\",\n    \"display\": \"Display Info\",\n    \"hardware\": \"Hardware Info\",\n    \"product\": \"Product Name\",\n    \"manufacturer\": \"Manufacturer Name\",\n    \"osVersion\": \"OS Version\",\n    \"device_id\": \"Unique Device ID\"\n}"
+                },
+                "description": "Submit device information."
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000",
+            "type": "string"
+        }
+    ]
+}
