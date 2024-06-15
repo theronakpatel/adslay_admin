@@ -50,7 +50,7 @@
                                 type="file"
                                 name="video"
                                 required
-                                accept="video/mp4"
+                                accept="video/mp4,image/*"
                                 />
             </div>
 
