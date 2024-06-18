@@ -5,8 +5,7 @@
     </label>
     <li class="mb-2 font-semibold text-xl">
         <a href="{{ route('admin.dashboard') }}">
-            {{-- <img src="{{ asset('images/adslay.png') }}" alt="Logo" style="height: 50px;"> --}}
-            Adslay
+            <img src="/adslay.png" class="h-12 rounded-lg w-full"/>
         </a>
     </li>
     @foreach($menus as $menu)

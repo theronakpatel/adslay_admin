@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/" class="text-5xl">
-		Adslay
+                    <img src="/adslay.png" class="h-12 rounded-lg w-full"/>
                 </a>
             </div>
 
