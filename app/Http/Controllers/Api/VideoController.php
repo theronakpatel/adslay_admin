@@ -68,7 +68,6 @@ class VideoController extends Controller
                                     's3_key' => $item->s3_key,
                                     'cloudfront_url' => $item->cloudfront_url,
                                     'created_at' => $item->created_at,
-                                    'updated_at' => $item->updated_at,
                                     'repeat_count' => $item->pivot->repeat_count,
                                     'position' => $item->pivot->position,
                                 ];
@@ -76,13 +75,16 @@ class VideoController extends Controller
 
             // Return JSON response
             return response()->json([
-                'device' => $device,
-                'media' => $media,
+                'success' => true,
+                'data' => [
+                    'device' => $device,
+                    'media' => $media
+                ]
             ]);
 
         } catch (\Exception $e) {
             // Handle exception (e.g., device not found)
-            return response()->json(['error' => 'Device not found.'], 404);
+            return response()->json(['success' => false, 'error' => 'Device not found.'], 404);
         }
     }
 }

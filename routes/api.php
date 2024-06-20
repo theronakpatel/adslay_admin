@@ -11,5 +11,5 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/videos', [VideoController::class, 'upload']);
 Route::get('/videos', [VideoController::class, 'index']);
-Route::get('/videos1/{deviceId}', [VideoController::class, 'getVideos']);
+Route::get('/device-videos/{deviceId}', [VideoController::class, 'getVideos']);
 Route::post('/device-info', [DeviceInfoController::class, 'store']);
