@@ -53,7 +53,7 @@ class VideoController extends Controller
     {
         try {
             // Retrieve the device with media information
-            $device = Device::findOrFail($deviceId);
+            $device = Device::where('device_id', $deviceId)->firstOrFail();
             
             // Eager load media with pivot attributes 'repeat_count' and 'position'
             $media = $device->media()
