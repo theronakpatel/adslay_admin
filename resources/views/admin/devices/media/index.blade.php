@@ -15,11 +15,11 @@
 
                 <div class="py-2">
 
-                <ul id="media-list" class="list-group max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                <ul id="media-list" class="list-group max-w-md divide-y divide-gray-200 dark:divide-gray-700 w-full">
                     @foreach($media as $item)
                         <li class="pb-3 sm:pb-4 list-group-item p-1 border mb-2" data-id="{{ $item->id }}">
                             <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                                <div class="flex-1 min-w-0 p-2 flex">
+                                <div class="flex-1 min-w-0 p-2 flex w-2/3">
                                     <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                                         {{ strtoupper($item->media_type) }}
                                     </p>
@@ -27,7 +27,7 @@
                                         {{ $item->title }}
                                     </p>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center w-1/3">
                                     <p class="font-bold p-2"> {{ strtoupper($item->media_type) == 'IMAGE'  ? 'Seconds' : 'Repeat count' }}: </p>
                                     <p class="p-1">
                                         <input type="number" id="number-input" aria-describedby="helper-text-explanation" class="repeat-count bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ $item->repeat_count ?? 1 }}" data-media-id="{{ $item->id }}" required />
