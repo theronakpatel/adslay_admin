@@ -15,7 +15,7 @@
 
                 <div class="py-2">
 
-                <ul id="media-list" class="list-group max-w-md divide-y divide-gray-200 dark:divide-gray-700 w-full">
+                <ul id="media-list" class="list-group divide-y divide-gray-200 dark:divide-gray-700 w-full">
                     @foreach($media as $item)
                         <li class="pb-3 sm:pb-4 list-group-item p-1 border mb-2 w-full" data-id="{{ $item->id }}">
                             <div class="flex items-center space-x-4 rtl:space-x-reverse w-full">
