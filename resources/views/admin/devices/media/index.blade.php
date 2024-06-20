@@ -15,15 +15,15 @@
 
                 <div class="py-2">
 
-                <ul id="media-list" class="list-group divide-y divide-gray-200 dark:divide-gray-700 w-full">
+                <ul id="media-list" class="list-group divide-y divide-gray-200  w-full">
                     @foreach($media as $item)
                         <li class="pb-3 sm:pb-4 list-group-item p-1 border mb-2 w-full" data-id="{{ $item->id }}">
                             <div class="flex items-center space-x-4 rtl:space-x-reverse w-full border-gray-600 justify-between">
                                 <div class="flex-1 min-w-0 p-2 flex w-2/3">
-                                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
                                         {{ strtoupper($item->media_type) }}
                                     </p>
-                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400 ml-2">
+                                    <p class="text-sm text-gray-500 truncate ml-2">
                                         {{ $item->title }}
                                     </p>
                                 </div>
