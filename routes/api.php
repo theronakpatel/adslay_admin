@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\VideoController;
 use App\Http\Controllers\Api\DeviceInfoController;
-use App\Http\Controllers\API\DeviceMediaController;
+use App\Http\Controllers\Api\DeviceMediaController;
 
 
 Route::get('/user', function (Request $request) {
