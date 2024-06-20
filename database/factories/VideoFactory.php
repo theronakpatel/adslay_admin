@@ -13,6 +13,7 @@ class VideoFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'media_typw' => $this->faker->sentence,
             's3_key' => 'videos/' . $this->faker->uuid . '.mp4',
             'cloudfront_url' => env('AWS_CLOUDFRONT_URL') . '/videos/' . $this->faker->uuid . '.mp4',
         ];

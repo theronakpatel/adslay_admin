@@ -13,5 +13,10 @@ class Video extends Model
         'title',
         's3_key',
         'cloudfront_url',
+        'media_type',
     ];
+    public function devices()
+    {
+        return $this->belongsToMany(Device::class, 'device_media', 'media_id', 'device_id');
+    }
 }

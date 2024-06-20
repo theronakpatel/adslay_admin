@@ -61,9 +61,20 @@ class CreateCategoryTables extends Migration
      */
     public function down()
     {
-        $tableNames = config('category.table_names');
-        Schema::dropIfExists($tableNames['category_types']);
-        Schema::dropIfExists($tableNames['categories']);
-        Schema::dropIfExists($tableNames['model_has_categories']);
+        // $tableNames = config('category.table_names');
+
+        // // Drop foreign key constraints
+        // Schema::table($tableNames['categories'], function (Blueprint $table) {
+        //     $table->dropForeign(['category_type_id']);
+        // });
+
+        // Schema::table($tableNames['model_has_categories'], function (Blueprint $table) use ($tableNames) {
+        //     $table->dropForeign(['category_id']);
+        // });
+
+        // // Drop tables in correct order
+        // Schema::dropIfExists($tableNames['model_has_categories']);
+        // Schema::dropIfExists($tableNames['categories']);
+        // Schema::dropIfExists($tableNames['category_types']);
     }
 }

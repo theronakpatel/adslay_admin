@@ -56,6 +56,7 @@ class MediaController extends Controller
         $video = new Media();
         $video->title = $request->title;
         $video->s3_key = $s3Key;
+        $video->media_type = $request->media_type;
         $video->cloudfront_url = $cloudfrontUrl;
         $video->save();
 
@@ -91,5 +92,12 @@ class MediaController extends Controller
     {
         $this->authorize('adminCreate', Media1::class);
         return view('admin.media.create');
+    }
+    public function destroy($id)
+    {
+        $media = Media::findOrFail($id);
+        Storage::disk('s3')->delete($media->s3_key);
+        $media->delete();
+        return redirect()->route('admin.media.index')->with('success', 'Media deleted successfully');
     }
 }

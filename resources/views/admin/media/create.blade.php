@@ -11,17 +11,14 @@
 
         <form method="POST" action="{{ route('admin.media.store') }}" enctype="multipart/form-data">
         @csrf
-            {{-- <div class="py">
-                <x-admin.form.label for="type" class="{{$errors->has('type') ? 'text-red-400' : ''}}">{{ __('Type') }}</x-admin.form.label>
+            <div class="py">
+                <x-admin.form.label for="media_type" class="{{$errors->has('media_type') ? 'text-red-400' : ''}}">{{ __('Type') }}</x-admin.form.label>
 
-                <select name="type" class="input input-bordered w-full">
-                    @foreach (media_type_as_options() as $key => $name)
-                    <option value="{{ $key }}" @selected(old('type') == $key)>
-                        {!! $name !!}
-                    </option>
-                    @endforeach
+                <select name="media_type" class="input input-bordered w-full">
+                    <option value="image">Image</option>
+                    <option value="video">Video</option>
                 </select>
-            </div> --}}
+            </div>
 
             <div class="py-2">
                 <x-admin.form.label for="title" class="{{$errors->has('title') ? 'text-red-400' : ''}}">{{ __('Title') }}</x-admin.form.label>

@@ -31,6 +31,7 @@ class VideoController extends Controller
         $video = new Video();
         $video->title = $request->title;
         $video->s3_key = $s3Key;
+        $video->media_type = $request->media_type;
         $video->cloudfront_url = $cloudfrontUrl;
         $video->save();
 
