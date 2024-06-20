@@ -17,4 +17,5 @@ class Device extends Model
     {
         return $this->belongsToMany(Video::class, 'device_media', 'device_id', 'media_id');
     }
+    
 }

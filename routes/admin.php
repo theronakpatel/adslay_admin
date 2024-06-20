@@ -35,4 +35,8 @@ Route::group([
     Route::post('change-password', 'UserController@changePasswordStore')->name('account.password.store');
     Route::get('devices/{device}/edit-media', 'DeviceController@editMedia')->name('devices.editMedia');
     Route::post('devices/{device}/update-media', 'DeviceController@updateMedia')->name('devices.updateMedia');
+    Route::post('devices/{device}/media/update-order', 'DeviceMediaController@updateOrder')->name('devices.media.updateOrder');
+    Route::get('devices/{device}/media', 'DeviceMediaController@showMedia')->name('devices.media.index');
+    Route::post('devices/media/update-repeat-count', 'DeviceMediaController@updateRepeatCount')->name('devices.media.updateRepeatCount');
+
 });
