@@ -11,7 +11,7 @@
 
         <form method="POST" action="{{ route('admin.devices.updateMedia', $device->id) }}">
         @csrf
-        @method('PUT')
+        @method('POST')
 
             <div class="py-2">
                 <x-admin.form.label for="media_ids" class="{{$errors->has('media_ids') ? 'text-red-400' : ''}}">{{ __('Select Media') }}</x-admin.form.label>
