@@ -4,14 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Device;
+use Illuminate\Http\Request;
+
 
 class DeviceMediaController extends Controller
 {
-    public function getMediaByDeviceId($deviceId)
+    public function getMediaByDeviceId(Request $request)
     {
+        // Validate the incoming request data
+        $request->validate([
+            'device_id' => 'required|exists:devices,id',
+        ]);
+
         try {
             // Retrieve the device with media information
-            $device = Device::findOrFail($deviceId);
+            $device = Device::findOrFail($request->device_id);
 
             // Eager load media with pivot attributes 'repeat_count' and 'position'
             $media = $device->media()
