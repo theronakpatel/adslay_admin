@@ -53,13 +53,26 @@ class VideoController extends Controller
     {
         try {
             // Retrieve the device with media information
-            $device = Device::where('device_id', $deviceId)->firstOrFail();
+            $device = Device::where('device_id', $deviceId )->firstOrFail();
             
             // Eager load media with pivot attributes 'repeat_count' and 'position'
             $media = $device->media()
                             ->withPivot('repeat_count', 'position')
                             ->orderBy('position')
-                            ->get();
+                            ->get()
+                            ->map(function ($item) {
+                                return [
+                                    'id' => $item->id,
+                                    'title' => $item->title,
+                                    'media_type' => $item->media_type,
+                                    's3_key' => $item->s3_key,
+                                    'cloudfront_url' => $item->cloudfront_url,
+                                    'created_at' => $item->created_at,
+                                    'updated_at' => $item->updated_at,
+                                    'repeat_count' => $item->pivot->repeat_count,
+                                    'position' => $item->pivot->position,
+                                ];
+                            });
 
             // Return JSON response
             return response()->json([
