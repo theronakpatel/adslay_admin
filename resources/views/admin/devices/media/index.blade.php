@@ -30,7 +30,7 @@
                                 <div class="flex items-center w-1/3">
                                     <p class="font-bold p-2"> {{ strtoupper($item->media_type) == 'IMAGE'  ? 'Seconds' : 'Repeat X' }}: </p>
                                     <p class="p-1">
-                                        <input type="number" id="number-input" aria-describedby="helper-text-explanation" class="repeat-count bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ $item->repeat_count ?? 1 }}" data-media-id="{{ $item->id }}" required />
+                                        <input type="number" id="number-input" aria-describedby="helper-text-explanation" class="repeat-count bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="{{ $item->pivot->repeat_count ?? 1 }}" data-media-id="{{ $item->id }}" required />
                                     </p>
                                 </div>
                             </div>

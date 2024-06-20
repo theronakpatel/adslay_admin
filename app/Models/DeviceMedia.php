@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DeviceMedia extends Model
 {
+    use HasFactory;
     protected $table = 'device_media';
 
     protected $fillable = [

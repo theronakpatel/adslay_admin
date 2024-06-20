@@ -15,7 +15,7 @@ class Device extends Model
 
     public function media()
     {
-        return $this->belongsToMany(Video::class, 'device_media', 'device_id', 'media_id');
+        return $this->belongsToMany(Video::class, 'device_media', 'device_id', 'media_id')->withPivot('repeat_count');
     }
     
 }
