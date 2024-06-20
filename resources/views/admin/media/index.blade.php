@@ -19,6 +19,9 @@
                             {{ __('Title') }}
                         </x-admin.grid.th>
                         <x-admin.grid.th>
+                            {{ __('Type') }}
+                        </x-admin.grid.th>
+                        <x-admin.grid.th>
                             {{ __('URL') }}
                         </x-admin.grid.th>
                         <x-admin.grid.th>
@@ -36,6 +39,19 @@
                     <tr>
                         <x-admin.grid.td>
                                 {{ $media->title }}
+                        </x-admin.grid.td>
+                        <x-admin.grid.td>
+                                {{ strtoupper($media->media_type) }}
+                                @if(strtoupper($media->media_type) === 'IMAGE')
+                                    <img src="{{ $media->cloudfront_url }}" alt="{{ $media->title }}" class="w-20">
+                                @elseif(strtoupper($media->media_type) === 'VIDEO')
+                                    <video controls class="w-40" autoplay="false">
+                                        <source src="{{ $media->cloudfront_url }}" type="video/*">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                @else
+                                    Unsupported media type: {{ $media->media_type }}
+                                @endif
                         </x-admin.grid.td>
                         <x-admin.grid.td>
                             <a target="_blank" href="{{ $media->cloudfront_url }}">{{ $media->cloudfront_url }}</a>
