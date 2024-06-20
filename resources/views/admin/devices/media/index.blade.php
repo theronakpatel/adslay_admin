@@ -18,7 +18,7 @@
                 <ul id="media-list" class="list-group max-w-md divide-y divide-gray-200 dark:divide-gray-700 w-full">
                     @foreach($media as $item)
                         <li class="pb-3 sm:pb-4 list-group-item p-1 border mb-2" data-id="{{ $item->id }}">
-                            <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                            <div class="flex items-center space-x-4 rtl:space-x-reverse w-full">
                                 <div class="flex-1 min-w-0 p-2 flex w-2/3">
                                     <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                                         {{ strtoupper($item->media_type) }}
