@@ -54,7 +54,7 @@
                     @foreach ($deviceInfos as $device)
                     <tr>
                         <x-admin.grid.td>
-                            <div>
+                            <div class="flex w-fit">
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">{{ $device->device_id }}</span>
                                 <button class="copy-btn" onclick="copyToClipboard('{{ $device->device_id }}')">Copy</button>
                             </div>
