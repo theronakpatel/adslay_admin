@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\HasAccessAdmin;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\Admin\DeviceInfoController;
 
 Route::group([
     'namespace' => 'App\Http\Controllers\Admin',
@@ -38,5 +39,5 @@ Route::group([
     Route::post('devices/{device}/media/update-order', 'DeviceMediaController@updateOrder')->name('devices.media.updateOrder');
     Route::get('devices/{device}/media', 'DeviceMediaController@showMedia')->name('devices.media.index');
     Route::post('devices/media/update-repeat-count', 'DeviceMediaController@updateRepeatCount')->name('devices.media.updateRepeatCount');
-
+    Route::get('device-info', 'DeviceInfoController@index')->name('device-info.index');
 });
