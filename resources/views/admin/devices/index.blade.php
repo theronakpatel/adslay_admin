@@ -36,7 +36,7 @@
                     <tr>
                         <x-admin.grid.td>
                             <div>
-                                {{ $device->device_id }}
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">{{ $device->device_id }}</span>
                             </div>
                         </x-admin.grid.td>
                         <x-admin.grid.td>
