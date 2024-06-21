@@ -22,7 +22,7 @@
                             {{ __('Type') }}
                         </x-admin.grid.th>
                         <x-admin.grid.th>
-                            {{ __('URL') }}
+                            {{ __('Media') }}
                         </x-admin.grid.th>
                         <x-admin.grid.th>
                             {{ __('Created') }}
