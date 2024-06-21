@@ -41,7 +41,13 @@
                                 {{ $media->title }}
                         </x-admin.grid.td>
                         <x-admin.grid.td>
-                                {{ strtoupper($media->media_type) }}
+                                @if(strtoupper($media->media_type) === 'IMAGE')
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">IMAGE</span>
+                                @elseif(strtoupper($media->media_type) === 'VIDEO')
+                                    <span class="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">VIDEO</span>
+                                @else
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">OTHER</span>
+                                @endif
                         </x-admin.grid.td>
                         <x-admin.grid.td>
                             <a target="_blank" href="{{ $media->cloudfront_url }}">{{ $media->cloudfront_url }}</a>
