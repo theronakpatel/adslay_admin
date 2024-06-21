@@ -42,7 +42,10 @@
                         </x-admin.grid.td>
                         <x-admin.grid.td>
                                 {{ strtoupper($media->media_type) }}
-                                @if(strtoupper($media->media_type) === 'IMAGE')
+                        </x-admin.grid.td>
+                        <x-admin.grid.td>
+                            <a target="_blank" href="{{ $media->cloudfront_url }}">{{ $media->cloudfront_url }}</a>
+                            @if(strtoupper($media->media_type) === 'IMAGE')
                                     <img src="{{ $media->cloudfront_url }}" alt="{{ $media->title }}" class="w-20">
                                 @elseif(strtoupper($media->media_type) === 'VIDEO')
                                     <video height="100" controls>
@@ -52,9 +55,6 @@
                                 @else
                                     Unsupported media type: {{ $media->media_type }}
                                 @endif
-                        </x-admin.grid.td>
-                        <x-admin.grid.td>
-                            <a target="_blank" href="{{ $media->cloudfront_url }}">{{ $media->cloudfront_url }}</a>
                         </x-admin.grid.td>
                         <x-admin.grid.td>
                             {{ $media->created_at->toDateTimeString() }}
