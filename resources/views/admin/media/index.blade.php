@@ -45,9 +45,9 @@
                                 @if(strtoupper($media->media_type) === 'IMAGE')
                                     <img src="{{ $media->cloudfront_url }}" alt="{{ $media->title }}" class="w-20">
                                 @elseif(strtoupper($media->media_type) === 'VIDEO')
-                                    <video controls class="w-40">
-                                        <source src="{{ $media->cloudfront_url }}" type="video/*">
-                                            Your browser does not support the video tag.
+                                    <video height="240" controls>
+                                        <source src="{{ $media->cloudfront_url }}" type="video/mp4">
+                                        Your browser does not support the video tag.
                                     </video>
                                 @else
                                     Unsupported media type: {{ $media->media_type }}
