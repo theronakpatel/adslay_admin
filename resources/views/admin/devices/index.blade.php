@@ -11,7 +11,7 @@
 
     <div class="py-2">
         <div class="min-w-full  border-base-200 shadow overflow-x-auto">
-            <x-admin.grid.search action="{{ route('admin.devices.index') }}" />
+            {{-- <x-admin.grid.search action="{{ route('admin.devices.index') }}" /> --}}
             <x-admin.grid.table>
                 <x-slot name="head">
                     <tr class="bg-base-200">
