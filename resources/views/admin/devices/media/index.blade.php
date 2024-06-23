@@ -38,6 +38,7 @@
                         @endforeach
                 </ul>
             </div>
+            <div class="font-bold">Note: You can rearrange the media by dragging and dropping.</div>
             <div class="flex justify-end mt-4">
                 <x-admin.form.button id="save-order">{{ __('Update Media') }}</x-admin.form.button>
             </div>
