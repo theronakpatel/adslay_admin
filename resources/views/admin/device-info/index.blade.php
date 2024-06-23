@@ -1,17 +1,17 @@
 <x-admin.wrapper>
     <x-slot name="title">
-        {{ __('Devices') }}
+        {{ __('Registered Devices') }}
     </x-slot>
 
     @can('adminCreate', \App\Models\User::class)
-    <x-admin.add-link href="{{ route('admin.devices.create') }}">
+    {{-- <x-admin.add-link href="{{ route('admin.devices.create') }}">
         {{ __('Add Device') }}
-    </x-admin.add-link>
+    </x-admin.add-link> --}}
     @endcan
 
     <div class="py-2">
         <div class="min-w-full  border-base-200 shadow overflow-x-auto">
-            <x-admin.grid.search action="{{ route('admin.devices.index') }}" />
+            {{-- <x-admin.grid.search action="{{ route('admin.devices.index') }}" /> --}}
             <x-admin.grid.table>
                 <x-slot name="head">
                     <tr class="bg-base-200">
@@ -124,6 +124,11 @@
             </x-admin.grid.table>
         </div>
     </div>
+    @isset($item['children'])
+        @foreach($item['children'] as $child)
+            <x-admin.grid.index-category-item :item="$child" :type="$type" :level="($level+1)" />
+        @endforeach
+    @endisset
 </x-admin.wrapper>
 <style>
     .copy-btn {
