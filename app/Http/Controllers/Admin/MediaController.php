@@ -70,7 +70,6 @@ class MediaController extends Controller
         if (request()->has('search')) {
             $mediaItems->where('title', 'Like', '%'.request()->input('search').'%');
         }
-
         if (request()->query('sort')) {
             $attribute = request()->query('sort');
             $sort_order = 'ASC';
