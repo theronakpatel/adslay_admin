@@ -12,7 +12,24 @@ class DeviceController extends Controller
     public function index()
     {
         $this->authorize('adminViewAny', Device::class);
-        $devices = Device::orderBy('created_at', 'desc')->get();
+        // $devices = Device::orderBy('created_at', 'desc')->get();
+        $devices = (new Device)->newQuery();
+        if (request()->has('search')) {
+            $devices->where('device_id', 'Like', '%'.request()->input('search').'%');
+        }
+        if (request()->query('sort')) {
+            $attribute = request()->query('sort');
+            $sort_order = 'ASC';
+            if (strncmp($attribute, '-', 1) === 0) {
+                $sort_order = 'DESC';
+                $attribute = substr($attribute, 1);
+            }
+            $devices->orderBy($attribute, $sort_order);
+        } else {
+            $devices->latest();
+        }
+
+        $devices = $devices->paginate(config('admin.paginate.per_page'))->onEachSide(config('admin.paginate.each_side'));
         return view('admin.devices.index', compact('devices'));
     }
 

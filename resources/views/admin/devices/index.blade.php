@@ -101,5 +101,8 @@
                 </x-slot>
             </x-admin.grid.table>
         </div>
+        <div class="py-8">
+            {{ $devices->appends(request()->query())->links() }}
+        </div>
     </div>
 </x-admin.wrapper>
