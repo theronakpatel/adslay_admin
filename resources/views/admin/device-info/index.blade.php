@@ -124,7 +124,7 @@
             </x-admin.grid.table>
         </div>
         <div class="py-8">
-            {{ $permissions->appends(request()->query())->links() }}
+            {{ $deviceInfos->appends(request()->query())->links() }}
         </div>
     </div>
 </x-admin.wrapper>
