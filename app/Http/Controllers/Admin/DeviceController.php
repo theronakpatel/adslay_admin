@@ -12,7 +12,7 @@ class DeviceController extends Controller
     public function index()
     {
         $this->authorize('adminViewAny', Device::class);
-        $devices = Device::all();
+        $devices = Device::orderBy('created_at', 'desc')->get();
         return view('admin.devices.index', compact('devices'));
     }
 

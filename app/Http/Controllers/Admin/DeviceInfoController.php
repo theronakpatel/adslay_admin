@@ -10,7 +10,7 @@ class DeviceInfoController extends Controller
 {
     public function index()
     {
-        $deviceInfos = DeviceInfo::all();
+        $deviceInfos = DeviceInfo::orderBy('created_at', 'desc')->get();
         return view('admin.device-info.index', compact('deviceInfos'));
     }
 }
