@@ -52,7 +52,7 @@
                         <x-admin.grid.td>
                             <a target="_blank" href="{{ $media->cloudfront_url }}">{{ $media->cloudfront_url }}</a>
                                 @if(strtoupper($media->media_type) === 'IMAGE')
-                                    <img src="{{ $media->cloudfront_url }}" alt="{{ $media->title }}" class="w-36">
+                                    <img src="{{ $media->cloudfront_url }}" alt="{{ $media->title }}" class="w-28">
                                 @elseif(strtoupper($media->media_type) === 'VIDEO')
                                     <div class="w-40">
                                         <video height="100" controls>
