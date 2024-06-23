@@ -35,7 +35,7 @@ class DeviceMediaController extends Controller
         $repeatCount = $request->input('repeat_count');
 
         // Update repeat count in the database
-        $deviceMedia = DeviceMedia::where('media_id', $mediaId)->first();
+        $deviceMedia = DeviceMedia::where('id', $mediaId)->first();
         if ($deviceMedia) {
             $deviceMedia->repeat_count = $repeatCount;
             $deviceMedia->save();
