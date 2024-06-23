@@ -123,12 +123,10 @@
                 </x-slot>
             </x-admin.grid.table>
         </div>
+        <div class="py-8">
+            {{ $permissions->appends(request()->query())->links() }}
+        </div>
     </div>
-    @isset($item['children'])
-        @foreach($item['children'] as $child)
-            <x-admin.grid.index-category-item :item="$child" :type="$type" :level="($level+1)" />
-        @endforeach
-    @endisset
 </x-admin.wrapper>
 <style>
     .copy-btn {
