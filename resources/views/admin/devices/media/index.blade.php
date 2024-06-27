@@ -75,6 +75,7 @@ li.list-group-item.ui-sortable-handle {
                 success: function(response) {
                     if (response.success) {
                         alert('Media order updated successfully.');
+                        window.history.back();
                     } else {
                         alert('Failed to update media order.');
                     }
