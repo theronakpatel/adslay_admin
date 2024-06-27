@@ -27,13 +27,13 @@ class MediaController extends Controller
         ]);
         
         if (!$request->hasFile('video')) {
-            return redirect()->route('admin.media.index')->with('error', 'No video file was uploaded.');
+            return redirect()->route('admin.media.index')->with('message', 'No video file was uploaded.');
         }
 
         $file = $request->file('video');
         
         if (!$file->isValid()) {
-            return redirect()->route('admin.media.index')->with('error', 'The uploaded file is not valid.');
+            return redirect()->route('admin.media.index')->with('message', 'The uploaded file is not valid.');
         }
         
         $fileName = time() . '_' . $file->getClientOriginalName();
@@ -60,7 +60,7 @@ class MediaController extends Controller
         $video->cloudfront_url = $cloudfrontUrl;
         $video->save();
 
-        return redirect()->route('admin.media.index')->with('success', 'Video uploaded successfully');
+        return redirect()->route('admin.media.index')->with('message', 'Video uploaded successfully');
     }
 
     public function index()
@@ -97,6 +97,6 @@ class MediaController extends Controller
         $media = Media::findOrFail($id);
         Storage::disk('s3')->delete($media->s3_key);
         $media->delete();
-        return redirect()->route('admin.media.index')->with('success', 'Media deleted successfully');
+        return redirect()->route('admin.media.index')->with('message', 'Media deleted successfully');
     }
 }

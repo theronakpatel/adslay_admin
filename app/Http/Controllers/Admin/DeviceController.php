@@ -50,8 +50,7 @@ class DeviceController extends Controller
             'device_name' => $request->device_name,
             'added_date' => now(),
         ]);
-
-        return redirect()->route('admin.devices.index')->with('success', 'Device added successfully');
+        return redirect()->route('admin.devices.index')->with('message', 'Device added successfully');
     }
 
     public function show($id)
@@ -80,7 +79,7 @@ class DeviceController extends Controller
             'device_name' => $request->device_name,
         ]);
 
-        return redirect()->route('admin.devices.index')->with('success', 'Device updated successfully');
+        return redirect()->route('admin.devices.index')->with('message', 'Device updated successfully');
     }
 
     public function destroy($id)
@@ -88,7 +87,7 @@ class DeviceController extends Controller
         $device = Device::findOrFail($id);
         $device->delete();
 
-        return redirect()->route('admin.devices.index')->with('success', 'Device deleted successfully');
+        return redirect()->route('admin.devices.index')->with('message', 'Device deleted successfully');
     }
 
     public function editMedia($id)
@@ -103,7 +102,7 @@ class DeviceController extends Controller
     {
         $device = Device::findOrFail($id);
         $device->media()->sync($request->media_ids);
-        return redirect()->route('admin.devices.index')->with('success', 'Device media updated successfully');
+        return redirect()->route('admin.devices.index')->with('message', 'Device media updated successfully');
     }
 
 }
