@@ -4,12 +4,12 @@
     "name": "axios"
   },
   "resources/css/admin/app.css": {
-    "file": "assets/app-B-QQpAa5.css",
+    "file": "assets/app-CG22RtD6.css",
     "src": "resources/css/admin/app.css",
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-D2B7uJC_.css",
+    "file": "assets/app-Dor6ABFZ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -23,7 +23,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-DA5tzhzz.js",
+    "file": "assets/app-8tW6TGey.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
