@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="manifest" href="/build/manifest.json" />
         <!-- Scripts -->
         @vite(['resources/css/admin/app.css', 'resources/js/admin/app.js'])
     </head>
