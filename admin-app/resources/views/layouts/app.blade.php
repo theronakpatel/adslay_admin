@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="manifest" href="/build/manifest.json" />
         <!-- Scripts -->
-        @vite(['resources/css/app.css?v='.filemtime(public_path('build/assets/app.css')), 'resources/js/app.js?v='.filemtime(public_path('build/assets/app.js'))])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         {{-- <link rel="preload" as="style" href="/build/assets/app-CG22RtD6.css?v={{ time() }}" /> --}}
         {{-- <link rel="modulepreload" href="/build/assets/app-DUfqXmJT.js?v={{ time() }}" /> --}}
         {{-- <link rel="modulepreload" href="/build/assets/axios-B4uVmeYG.js?v={{ time() }}" /> --}}
