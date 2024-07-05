@@ -12,11 +12,12 @@
         <link rel="manifest" href="/build/manifest.json" />
         <!-- Scripts -->
         {{-- @vite(['resources/css/admin/app.css', 'resources/js/admin/app.js']) --}}
-        {{-- <link rel="preload" as="style" href="/build/assets/app-CG22RtD6.css?v={{ time() }}" /> --}}
-        {{-- <link rel="modulepreload" href="/build/assets/app-DUfqXmJT.js?v={{ time() }}" /> --}}
-        {{-- <link rel="modulepreload" href="/build/assets/axios-B4uVmeYG.js?v={{ time() }}" /> --}}
-        {{-- <link rel="stylesheet" href="/build/assets/app-CG22RtD6.css?v={{ time() }}" /> --}}
-        {{-- <script type="module" src="/build/assets/app-DUfqXmJT.js?v={{ time() }}"></script> --}}
+        <link rel="preload" as="style" href="/build/assets/app-CG22RtD6.css?v={{ time() }}" />
+        <link rel="modulepreload" href="/build/assets/app-8tW6TGey.js?v={{ time() }}" />
+        <link rel="modulepreload" href="/build/assets/axios-B4uVmeYG.js?v={{ time() }}" />
+        <link rel="stylesheet" href="/build/assets/app-CG22RtD6.css?v={{ time() }}" />
+        <script type="module" src="/build/assets/app-8tW6TGey.js?v={{ time() }}"></script>
+        <script type="module" src="/build/assets/app-DUfqXmJT.js?v={{ time() }}"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="bg-base-100 drawer lg:drawer-open">
